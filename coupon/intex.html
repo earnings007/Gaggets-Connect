@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)file:///C:/Users/Win10/Desktop/coupon/intex.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gadgets Connect - UPI Checkout</title>
+  <script src="./intex_files/confetti.browser.min.js.download"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+    }
+    header {
+      background: #28a745;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .btn-buy {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #coupon-section {
+      display: flex;
+      gap: 1rem;
+    }
+    #coupon-section input {
+      flex: 1;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .summary {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+    }
+    .qr-code {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .qr-code img {
+      width: 180px;
+      border: 4px solid #28a745;
+      border-radius: 10px;
+    }
+    .success-message {
+      display: none;
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem;
+      border-radius: 10px;
+      background: #e0ffe6;
+      color: #155724;
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🛍️ Gadgets Connect</h1>
+    <p>Select your favorite gadget and place your order</p>
+  </header>
+
+  <div class="products">
+    <div class="product-card">
+      <img src="./intex_files/WhatsApp Image 2025-04-03 at 14.11.38_2aa849b3.jpg" alt="Watch">
+      <h3>Trendy Watch</h3>
+      <p>₹549</p>
+      <a class="btn-buy" onclick="selectProduct(549, &#39;Trendy Watch&#39;)">Buy Now</a>
+    </div>
+    <div class="product-card">
+      <img src="./intex_files/IMG-20250406-WA0045[1].jpg" alt="Earbuds">
+      <h3>Combo Earbuds</h3>
+      <p>₹799</p>
+      <a class="btn-buy" onclick="selectProduct(799, &#39;Combo Earbuds&#39;)">Buy Now</a>
+    </div>
+    <div class="product-card">
+      <img src="./intex_files/WhatsApp Image 2025-04-09 at 15.34.29_1711656c.jpg" alt="Sneakers">
+      <h3>Stylish Sneakers</h3>
+      <p>₹599</p>
+      <a class="btn-buy" onclick="selectProduct(999, &#39;Stylish Sneakers&#39;)">Buy Now</a>
+    </div>
+  </div>
+  <div class="products">
+    <div class="product-card">
+      <img src="./intex_files/WhatsApp Image 2025-04-09 at 15.36.36_e60ff761.jpg" alt="Watch">
+      <h3>IPHONE C TO LITHING CABLE</h3>
+      <p>₹849</p>
+      <a class="btn-buy" onclick="selectProduct(849, &#39;IPHONE C TO LITHING CABLE&#39;)">Buy Now</a>
+    </div>
+    <div class="product-card">
+      <img src="./intex_files/WhatsApp Image 2025-04-09 at 15.33.30_dbf0bc3a.jpg" alt="Earbuds">
+      <h3>LG Watches</h3>
+      <p>₹499</p>
+      <a class="btn-buy" onclick="selectProduct(499, &#39;LG WATCHES&#39;)">Buy Now</a>
+    </div>
+    <div class="product-card">
+      <img src="./intex_files/WhatsApp Image 2025-04-09 at 15.22.00_44eeca63.jpg" alt="Sneakers">
+      <h3>DELTON &amp; TIMERACK new model</h3>
+      <p>₹449</p>
+      <a class="btn-buy" onclick="selectProduct(449, &#39;DELTON &amp; TIMERACK new model&#39;)">Buy Now</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Checkout</h2>
+    <p><strong>Product:</strong> <span id="selected-product">DELTON &amp; TIMERACK new model</span></p>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your full name">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" placeholder="10-digit number">
+    </div>
+    <div class="form-group">
+      <label for="pincode">Pincode</label>
+      <input type="text" id="pincode" placeholder="Your area pincode">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea id="address" rows="4" placeholder="Street, Flat No, Landmark..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="coupon">Coupon Code</label>
+      <div id="coupon-section">
+        <input type="text" id="coupon" placeholder="Enter code (e.g. BASI50)">
+        <button onclick="applyCoupon()">Apply</button>
+      </div>
+    </div>
+
+    <div class="summary">
+      <p><strong>Subtotal:</strong> ₹<span id="subtotal">449</span></p>
+      <p><strong>Discount:</strong> ₹<span id="discount">50</span></p>
+      <p><strong>Total:</strong> ₹<span id="total">399</span></p>
+    </div>
+
+    <div class="qr-code">
+      <p>📷 Scan this UPI QR or click the button below to pay</p>
+      <img src="./intex_files/WhatsApp Image 2025-04-08 at 09.38.44_3b37134f.jpg" alt="QR Code">
+      <p><strong>UPI ID:</strong> <span style="font-weight:bold;">abasith@fam</span></p>
+      <button onclick="redirectToUPI()">Pay via UPI App</button>
+    </div>
+
+    <button onclick="confirmPayment()">✅ I Have Paid</button>
+
+    <div class="success-message" id="thankyou">
+      <h2>✅ Payment Confirmed!</h2>
+      <p>🎉 Thank you for shopping with us.<br>Your order has been placed successfully.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Gadgets Connect | All rights reserved</p>
+  </footer>
+
+  <script>
+    let subtotal = 0;
+    let discount = 0;
+    let selectedProduct = '';
+
+    function selectProduct(price, name) {
+      subtotal = price;
+      selectedProduct = name;
+      discount = 0;
+      document.getElementById("selected-product").textContent = name;
+      updateTotals();
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById("coupon").value.trim();
+      if (code === "BASI50") {
+        discount = 50;
+        alert("Coupon applied: ₹50 off!");
+      } else {
+        discount = 0;
+        alert("Invalid coupon code");
+      }
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const total = subtotal - discount;
+      document.getElementById("subtotal").textContent = subtotal;
+      document.getElementById("discount").textContent = discount;
+      document.getElementById("total").textContent = total;
+    }
+
+    function redirectToUPI() {
+      const amount = subtotal - discount;
+      const upiLink = `upi://pay?pa=abasith@fam&pn=Gadgets+Connect&am=${amount}&cu=INR`;
+      window.location.href = upiLink;
+    }
+
+    function confirmPayment() {
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const address = document.getElementById("address").value;
+      const pincode = document.getElementById("pincode").value;
+
+      if (!name || !phone || !address || !pincode) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      confetti();
+      document.getElementById("thankyou").style.display = "block";
+      const msg = `Order Details:%0AProduct: ${selectedProduct}%0ATotal: ₹${subtotal - discount}%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}, ${pincode}`;
+      window.open(`https://wa.me/918891672261?text=${msg}`, '_blank');
+    }
+  </script>
+
+
+
+
+</body></html>
